@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ESP-AVR-ISP</title>
+    <style></style>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div id="listProgramsPage" class="listProgramsPage page">
+        <div class="headerSection">
+          <h1 class="pageHeading">ESP-AVR-ISP</h1>
+          <div class="pageCTAConatiner">
+            <button
+              type="button"
+              class="customButton customButton--secondary"
+              onclick="navigateToSettingsPage()"
+            >
+              <p>Settings</p>
+            </button>
+            <button
+              type="button"
+              class="customButton customButton--primary"
+              onclick="navigateToAddProgramsPage()"
+            >
+              <span>Add Program</span>
+            </button>
+          </div>
+        </div>
+        <div class="searchSection">
+          <div class="inputContainer">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="20" height="20" fill="white" fill-opacity="0.01" />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M13.3332 8.66663C13.3332 11.244 11.2438 13.3333 8.6665 13.3333C6.08917 13.3333 3.99984 11.244 3.99984 8.66663C3.99984 6.08929 6.08917 3.99996 8.6665 3.99996C11.2438 3.99996 13.3332 6.08929 13.3332 8.66663ZM12.4116 13.3545C11.3852 14.1757 10.0832 14.6666 8.6665 14.6666C5.3528 14.6666 2.6665 11.9803 2.6665 8.66663C2.6665 5.35292 5.3528 2.66663 8.6665 2.66663C11.9802 2.66663 14.6665 5.35292 14.6665 8.66663C14.6665 10.0833 14.1756 11.3853 13.3544 12.4117L17.138 16.1952C17.3982 16.4556 17.3982 16.8777 17.138 17.1381C16.8776 17.3984 16.4554 17.3984 16.195 17.1381L12.4116 13.3545Z"
+                fill="#000713"
+                fill-opacity="0.624"
+              />
+            </svg>
+            <input
+              type="text"
+              name="programSearch"
+              id="programSearch"
+              placeholder="Search by program name"
+            />
+          </div>
+          <button
+            id="searchButton"
+            type="button"
+            class="customButton customButton--primaryDark"
+          >
+            <span>Search</span>
+          </button>
+        </div>
+        <div class="contentSection">
+          <div id="programsListContainer" class="programsListContainer">
+            <table id="programsList" class="programsList">
+              <thead>
+                <tr>
+                  <th>Program Name</th>
+                  <th>Device</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <div id="noProgramsBanner" class="noProgramsBanner">
+            <span class="filesIcon">
+              <svg
+                width="32"
+                height="33"
+                viewBox="0 0 32 33"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  width="32"
+                  height="32"
+                  transform="translate(0 0.5)"
+                  fill="white"
+                  fill-opacity="0.01"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.4666 4.7667C6.8775 4.7667 6.39994 5.24426 6.39994 5.83336V27.1667C6.39994 27.7557 6.8775 28.2334 7.4666 28.2334H24.5333C25.1223 28.2334 25.5999 27.7557 25.5999 27.1667V13.3H18.1333C17.5442 13.3 17.0666 12.8225 17.0666 12.2334V4.7667H7.4666ZM19.1999 6.2752L24.0915 11.1667H19.1999V6.2752ZM4.2666 5.83336C4.2666 4.06604 5.69928 2.63336 7.4666 2.63336H18.1333C18.4162 2.63336 18.6875 2.74575 18.8875 2.94579L27.4209 11.4791C27.6208 11.6791 27.7333 11.9505 27.7333 12.2334V27.1667C27.7333 28.934 26.3005 30.3667 24.5333 30.3667H7.4666C5.69928 30.3667 4.2666 28.934 4.2666 27.1667V5.83336Z"
+                  fill="#2F265F"
+                />
+              </svg>
+            </span>
+            <h2>No Programs available</h2>
+            <p>Get started by creating your first program</p>
+            <button
+              type="button"
+              class="customButton customButton--primary customButton--fullWidth"
+              onclick="navigateToAddProgramsPage()"
+            >
+              Add Program
+            </button>
+          </div>
+        </div>
+        <div class="footerSection">
+          <div class="memoryInfoContainer">
+            <p id="usedMemory" class="usedMemory">Used:</p>
+            <span class="memoryIndicator">
+              <div id="memoryLevelContainer" class="memoryLevelContainer">
+                <div id="memoryLevel" class="memoryLevel"></div>
+              </div>
+              <p id="memoryPercentage" class="memoryPercentage"></p>
+            </span>
+          </div>
+          <div class="versionInfoContainer">
+            <p id="versionInfo" class="versionInfo">Firmware version:</p>
+          </div>
+        </div>
+      </div>
+      <div id="settingsPage" class="settingsPage page">
+        <div class="headerSection">
+          <a id="naviagteBack" class="navLink" href="/">
+            <span>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="20" height="20" fill="white" fill-opacity="0.01" />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M9.13815 4.19527C9.39851 4.45562 9.39851 4.87772 9.13815 5.13807L4.9429 9.33334H16.6668C17.0349 9.33334 17.3334 9.63182 17.3334 10C17.3334 10.3682 17.0349 10.6667 16.6668 10.6667H4.9429L9.13815 14.8619C9.39851 15.1223 9.39851 15.5444 9.13815 15.8048C8.8778 16.0651 8.4557 16.0651 8.19535 15.8048L2.86202 10.4714C2.60166 10.2111 2.60166 9.78895 2.86202 9.5286L8.19535 4.19527C8.4557 3.93491 8.8778 3.93491 9.13815 4.19527Z"
+                  fill="#1C2024"
+                />
+              </svg>
+            </span>
+            Back
+          </a>
+          <h1 class="pageHeading">Settings</h1>
+        </div>
+        <div class="contentSection">
+          <div class="subSection">
+            <h3 class="sectionName">Software Updates</h3>
+            <div class="softwareUpdateBanner">
+              <div id="dangerIcon" class="statusIcon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    width="24"
+                    height="24"
+                    fill="white"
+                    fill-opacity="0.01"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M13.5118 0.973926C12.8293 -0.171322 11.1707 -0.171322 10.4881 0.973928L0.257872 18.1388C-0.441331 19.3119 0.403992 20.7999 1.76972 20.7999H22.2302C23.596 20.7999 24.4413 19.3119 23.7421 18.1388L13.5118 0.973926ZM11.8625 1.79307C11.9246 1.68896 12.0754 1.68896 12.1374 1.79307L22.3677 18.958C22.4313 19.0645 22.3544 19.1999 22.2302 19.1999H1.76972C1.64557 19.1999 1.56871 19.0645 1.63228 18.958L11.8625 1.79307ZM10.923 7.17768C10.8995 6.56667 11.3885 6.05851 12 6.05851C12.6115 6.05851 13.1004 6.56667 13.0769 7.1777L12.8307 13.5791C12.8136 14.0255 12.4467 14.3785 12 14.3785C11.5533 14.3785 11.1864 14.0255 11.1692 13.5791L10.923 7.17768ZM13.1998 16.7615C13.1998 17.4242 12.6625 17.9615 11.9998 17.9615C11.3371 17.9615 10.7998 17.4242 10.7998 16.7615C10.7998 16.0988 11.3371 15.5615 11.9998 15.5615C12.6625 15.5615 13.1998 16.0988 13.1998 16.7615Z"
+                    fill="#D93D42"
+                  />
+                </svg>
+              </div>
+              <div class="versionInfoContainer">
+                <span class="versionStatusText">Deprecated Version</span>
+                <div class="versionInfoText">
+                  <span id="currentVersionText" class="currentVersionText"
+                    >Current Version 0.0.1</span
+                  >
+                  <span id="lastestVersionText" class="lastestVersionText">
+                    Latest Stable Version 1.0.0
+                  </span>
+                </div>
+              </div>
+              <button
+                id="updateButton"
+                type="button"
+                class="customButton customButton--primary"
+                onclick="browseFileForUpload(event)"
+              >
+                <span>Update</span>
+              </button>
+            </div>
+          </div>
+          <div id="wifiConfigSection" class="subSection">
+            <h3 class="sectionName">Wireless Network Configuration</h3>
+
+            <div class="networkModeRadioButtons formField--large">
+              <div class="radioButtonContainer">
+                <input
+                  type="radio"
+                  name="network_mode"
+                  id="hotspot_mode_rb"
+                  onclick="onNetworkModeChange('HOTSPOT');"
+                  checked
+                />
+                <label for="hotspot_mode_rb"> Hotspot Mode </label>
+              </div>
+
+              <div class="radioButtonContainer">
+                <input
+                  type="radio"
+                  name="network_mode"
+                  id="wifi_mode_rb"
+                  onclick="onNetworkModeChange('WIFI');"
+                />
+                <label for="wifi_mode_rb"> Wi-Fi Mode </label>
+              </div>
+            </div>
+
+            <div class="formField formField--medium hotspotField">
+              <label for="hotspot_ssid" class="required">SSID</label>
+              <input
+                required
+                type="text"
+                name="hotspot_ssid"
+                id="hotspot_ssid"
+                maxlength="32"
+                placeholder="Hotspot SSID (Max. 32 characters)"
+                onchange="updateNetworkSSID(this)"
+              />
+            </div>
+            <div class="formField formField--medium hotspotField"></div>
+
+            <div class="formField formField--medium hotspotField">
+              <label for="" class="required">Password</label>
+              <input
+                required
+                type="text"
+                name="hotspot_password"
+                id="hotspot_password"
+                maxlength="16"
+                placeholder="Hotspot Password (Max. 16 characters)"
+                onchange="updateNetworkPassword(this)"
+              />
+            </div>
+            <!-- <div class="formField formField--medium wifiField"></div> -->
+
+            <div
+              id="wifiSSIDContainer"
+              class="formField formField--large wifiField"
+            >
+              <label for="wifi_ssid" class="required">SSID</label>
+              <div class="wifiSSIDSelectorContainer">
+                <select
+                  required
+                  name="wifi_ssid"
+                  id="wifiSSIDSelector"
+                  onchange="updateNetworkSSID(this)"
+                >
+                  <option disabled selected value="">
+                    Select Wi-Fi Network
+                  </option>
+                </select>
+                <button
+                  id="scanButton"
+                  type="button"
+                  class="customButton customButton--primaryDark"
+                  onclick="scan_networks()"
+                >
+                  <span>Scan</span>
+                </button>
+                <div id="scanLoader">
+                  <div class="loader"></div>
+                  <!-- <div class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="formField formField--medium wifiField">
+              <label for="wifi_password" class="required">Password</label>
+              <input
+                required
+                type="text"
+                name="wifi_password"
+                id="wifiPassword"
+                maxlength="16"
+                placeholder="Wi-Fi Password (Max. 16 characters)"
+                onchange="updateNetworkPassword(this)"
+              />
+            </div>
+            <div
+              class="formField formField--medium wifiField hotspotField"
+            ></div>
+            <button
+              id="saveRestartButton"
+              type="button"
+              class="customButton customButton--primary"
+              onclick="saveNetworkConfig()"
+            >
+              <span>Save & Restart</span>
+            </button>
+          </div>
+        </div>
+        <div class="footerSection">
+          <div class="memoryInfoContainer">
+            <p id="usedMemory" class="usedMemory">Used:</p>
+            <span class="memoryIndicator">
+              <div id="memoryLevelContainer" class="memoryLevelContainer">
+                <div id="memoryLevel" class="memoryLevel"></div>
+              </div>
+              <p id="memoryPercentage" class="memoryPercentage"></p>
+            </span>
+          </div>
+          <div class="versionInfoContainer">
+            <p id="versionInfo" class="versionInfo">Firmware version:</p>
+          </div>
+        </div>
+      </div>
+      <div id="addEditProgramPage" class="addEditProgramPage page">
+        <div class="headerSection">
+          <a id="naviagteBack" class="navLink" href="/">
+            <span>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="20" height="20" fill="white" fill-opacity="0.01" />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M9.13815 4.19527C9.39851 4.45562 9.39851 4.87772 9.13815 5.13807L4.9429 9.33334H16.6668C17.0349 9.33334 17.3334 9.63182 17.3334 10C17.3334 10.3682 17.0349 10.6667 16.6668 10.6667H4.9429L9.13815 14.8619C9.39851 15.1223 9.39851 15.5444 9.13815 15.8048C8.8778 16.0651 8.4557 16.0651 8.19535 15.8048L2.86202 10.4714C2.60166 10.2111 2.60166 9.78895 2.86202 9.5286L8.19535 4.19527C8.4557 3.93491 8.8778 3.93491 9.13815 4.19527Z"
+                  fill="#1C2024"
+                />
+              </svg>
+            </span>
+            Back
+          </a>
+          <h1 class="pageHeading">Add Program</h1>
+          <!-- <div class="pageCTAConatiner">
+            <button type="button" class="customButton customButton--secondary">
+              <p>Settings</p>
+            </button>
+            <button type="button" class="customButton customButton--primary">
+              <span>Add Program</span>
+            </button>
+          </div> -->
+        </div>
+        <div class="contentSection">
+          <form
+            id="programFormContainer"
+            class="programFormContainer"
+            method="post"
+            onsubmit="return submitFormData(event);"
+            enctype="multipart/form-data"
+          >
+            <input type="text" name="device_name" id="device_name" hidden />
+            <input type="text" name="device_id" id="device_id" hidden />
+            <input
+              type="text"
+              name="auto_lock"
+              id="auto_lock"
+              value="false"
+              hidden
+            />
+            <input
+              type="text"
+              name="auto_verify"
+              id="auto_verify"
+              value="false"
+              hidden
+            />
+            <div class="formField formField--medium">
+              <label for="" class="required">Program Name</label>
+              <input
+                required
+                type="text"
+                name="program_name"
+                id="programName"
+                maxlength="13"
+                placeholder="Program Name (Max. 13 characters)"
+              />
+            </div>
+            <div class="formField formField--medium">
+              <label for="deviceSelector" class="required">Device</label>
+              <select
+                required
+                name="selected_device"
+                id="deviceSelector"
+                onchange="onDeviceSelect(this)"
+              >
+                <option disabled selected value="">Select a Device</option>
+              </select>
+            </div>
+            <div class="formField formField--small">
+              <label for="lowBitsInput">Low Fuse</label>
+              <p class="hexPreText"></p>
+              <input
+                class="hexValueInput"
+                type="text"
+                name="low_fuse"
+                id="lowBitsInput"
+                placeholder="FF"
+                maxlength="2"
+                oninput="sanitizeHex(this)"
+              />
+            </div>
+            <div class="formField formField--small">
+              <label for="highBitsInput">High Fuse</label>
+              <p class="hexPreText"></p>
+              <input
+                class="hexValueInput"
+                type="text"
+                name="high_fuse"
+                id="highBitsInput"
+                placeholder="FF"
+                maxlength="2"
+                oninput="sanitizeHex(this)"
+              />
+              <!-- pattern="#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?" -->
+            </div>
+            <div class="formField formField--small">
+              <label for="extendedBitsInput">Extended Fuse</label>
+              <p class="hexPreText"></p>
+              <input
+                class="hexValueInput"
+                type="text"
+                name="extended_fuse"
+                id="extendedBitsInput"
+                placeholder="FF"
+                maxlength="2"
+                oninput="sanitizeHex(this)"
+              />
+            </div>
+            <div class="formField formField--small">
+              <label for="lockBitsInput">Lock Bits</label>
+              <p class="hexPreText"></p>
+              <input
+                class="hexValueInput"
+                type="text"
+                name="lock_bits"
+                id="lockBitsInput"
+                placeholder="FF"
+                maxlength="2"
+                oninput="sanitizeHex(this)"
+              />
+            </div>
+            <div class="formField formField--medium formField--checkbox-field">
+              <input
+                type="checkbox"
+                name="autoVerify"
+                id="autoVerify"
+                checked
+                onchange="handleCheckboxChange(this)"
+              />
+              <label for="autoVerify"> Auto-Verify after program </label>
+            </div>
+            <div class="formField formField--medium formField--checkbox-field">
+              <input
+                type="checkbox"
+                name="autoLock"
+                id="autoLock"
+                onchange="handleCheckboxChange(this)"
+              />
+              <label for="autoLock"> Auto-Lock after program </label>
+            </div>
+            <div class="formField--medium notation">
+              <label>Hex File Size:</label>
+              <span id="hexFileSizeValue">2.2 KB</span>
+            </div>
+            <div class="formField--medium notation">
+              <label>Total Programmed Count:</label>
+              <span id="programmedCountValue">5</span>
+            </div>
+            <div id="uploadContainer" class="formField formField--large">
+              <label for="" class="required">Upload *.hex file</label>
+              <div
+                id="fileUploadContainer"
+                class="fileUploadContainer"
+                ondrop="handleFileDrop(event,this)"
+                ondragover="handleFileDrag(event,this);"
+                ondragenter="handleFileDragEnter(this)"
+              >
+                <div class="fileUploadArea" onclick="browseFileForUpload()">
+                  <input
+                    type="file"
+                    name="file"
+                    id="hexFileUpload"
+                    accept=".hex"
+                    onchange="onFileSelect(this)"
+                  />
+                  <span id="uploadIcon" class="uploadIcon"
+                    ><svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        width="24"
+                        height="24"
+                        fill="white"
+                        fill-opacity="0.01"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12.5092 1.89105C12.228 1.60988 11.7721 1.60988 11.4909 1.89105L6.69091 6.69105C6.40973 6.97224 6.40973 7.42811 6.69091 7.70929C6.9721 7.99046 7.42797 7.99046 7.70915 7.70929L11.28 4.13841V15.2C11.28 15.5976 11.6024 15.92 12 15.92C12.3977 15.92 12.72 15.5976 12.72 15.2V4.13841L16.291 7.70929C16.5721 7.99046 17.028 7.99046 17.3091 7.70929C17.5904 7.42811 17.5904 6.97224 17.3091 6.69105L12.5092 1.89105ZM3.99995 16C4.44178 16 4.79995 16.3581 4.79995 16.8V19.2C4.79995 20.0861 5.51299 20.8 6.39411 20.8H17.6019C18.4846 20.8 19.2 20.0845 19.2 19.2V16.8C19.2 16.3581 19.5582 16 20 16C20.4417 16 20.8 16.3581 20.8 16.8V19.2C20.8 20.9664 19.3699 22.4 17.6019 22.4H6.39411C4.62426 22.4 3.19995 20.9648 3.19995 19.2V16.8C3.19995 16.3581 3.55813 16 3.99995 16Z"
+                        fill="#2F265F"
+                      />
+                    </svg>
+                  </span>
+                  <span id="checkIcon" class="checkIcon">
+                    <div class="loaderBorder"></div>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M17.7472 6.16314C18.2095 6.46538 18.3392 7.08512 18.037 7.54736L11.237 17.9474C11.0767 18.1925 10.8171 18.3549 10.5266 18.392C10.2361 18.4292 9.94402 18.337 9.72733 18.14L5.32733 14.14C4.91867 13.7685 4.88856 13.1361 5.26007 12.7274C5.63157 12.3188 6.26402 12.2887 6.67267 12.6602L10.2049 15.8712L16.3631 6.45286C16.6653 5.99062 17.285 5.86091 17.7472 6.16314Z"
+                        fill="#1C2024"
+                      />
+                    </svg>
+                  </span>
+                  <div class="fileInfoText">
+                    <span id="headingText" class="headingText"
+                      >Select *.hex file</span
+                    >
+                    <span id="descriptionText" class="descriptionText"
+                      >Select & upload your code file by clicking here</span
+                    >
+                  </div>
+                </div>
+                <button
+                  id="browseButton"
+                  type="button"
+                  class="customButton customButton--primaryDark"
+                  onclick="browseFileForUpload(event)"
+                >
+                  <span>Browse</span>
+                </button>
+                <button
+                  id="removeButton"
+                  type="button"
+                  class="customButton customButton--primaryDark"
+                  onclick="removeUploadedFile(event)"
+                >
+                  <span>Remove</span>
+                </button>
+              </div>
+            </div>
+            <div class="formActionButtons">
+              <button
+                type="button"
+                class="customButton customButton--secondary"
+                onclick="navigateToListProgramsPage()"
+              >
+                <p>Cancel</p>
+              </button>
+              <button type="submit" class="customButton customButton--primary">
+                <span>Save Program</span>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="footerSection">
+          <div class="memoryInfoContainer">
+            <p id="usedMemory" class="usedMemory">Used:</p>
+            <span class="memoryIndicator">
+              <div id="memoryLevelContainer" class="memoryLevelContainer">
+                <div id="memoryLevel" class="memoryLevel"></div>
+              </div>
+              <p id="memoryPercentage" class="memoryPercentage"></p>
+            </span>
+          </div>
+          <div class="versionInfoContainer">
+            <p id="versionInfo" class="versionInfo">Firmware version:</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1272 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.px-4 {
+  padding-left: "0.25rem";
+  padding-right: "0.25rem";
+}
+
+.px-8 {
+  padding-left: "0.5rem";
+  padding-right: "0.5rem";
+}
+
+.px-12 {
+  padding-left: "0.75rem";
+  padding-right: "0.75rem";
+}
+
+.px-14 {
+  padding-left: "0.875rem";
+  padding-right: "0.875rem";
+}
+
+.px-16 {
+  padding-left: "1rem";
+  padding-right: "1rem";
+}
+
+.px-18 {
+  padding-left: "1.125rem";
+  padding-right: "1.125rem";
+}
+
+.px-20 {
+  padding-left: "1.25rem";
+  padding-right: "1.25rem";
+}
+
+.px-22 {
+  padding-left: "1.375rem";
+  padding-right: "1.375rem";
+}
+
+.px-24 {
+  padding-left: "1.5rem";
+  padding-right: "1.5rem";
+}
+
+.px-30 {
+  padding-left: "1.875rem";
+  padding-right: "1.875rem";
+}
+
+.px-32 {
+  padding-left: "2rem";
+  padding-right: "2rem";
+}
+
+.px-36 {
+  padding-left: "2.25rem";
+  padding-right: "2.25rem";
+}
+
+.px-40 {
+  padding-left: "2.5rem";
+  padding-right: "2.5rem";
+}
+
+.px-48 {
+  padding-left: "3rem";
+  padding-right: "3rem";
+}
+
+.py-4 {
+  padding-top: "0.25rem";
+  padding-bottom: "0.25rem";
+}
+
+.py-8 {
+  padding-top: "0.5rem";
+  padding-bottom: "0.5rem";
+}
+
+.py-12 {
+  padding-top: "0.75rem";
+  padding-bottom: "0.75rem";
+}
+
+.py-14 {
+  padding-top: "0.875rem";
+  padding-bottom: "0.875rem";
+}
+
+.py-16 {
+  padding-top: "1rem";
+  padding-bottom: "1rem";
+}
+
+.py-18 {
+  padding-top: "1.125rem";
+  padding-bottom: "1.125rem";
+}
+
+.py-20 {
+  padding-top: "1.25rem";
+  padding-bottom: "1.25rem";
+}
+
+.py-22 {
+  padding-top: "1.375rem";
+  padding-bottom: "1.375rem";
+}
+
+.py-24 {
+  padding-top: "1.5rem";
+  padding-bottom: "1.5rem";
+}
+
+.py-30 {
+  padding-top: "1.875rem";
+  padding-bottom: "1.875rem";
+}
+
+.py-32 {
+  padding-top: "2rem";
+  padding-bottom: "2rem";
+}
+
+.py-36 {
+  padding-top: "2.25rem";
+  padding-bottom: "2.25rem";
+}
+
+.py-40 {
+  padding-top: "2.5rem";
+  padding-bottom: "2.5rem";
+}
+
+.py-48 {
+  padding-top: "3rem";
+  padding-bottom: "3rem";
+}
+
+.mx-4 {
+  margin-left: "0.25rem";
+  margin-right: "0.25rem";
+}
+
+.mx-8 {
+  margin-left: "0.5rem";
+  margin-right: "0.5rem";
+}
+
+.mx-12 {
+  margin-left: "0.75rem";
+  margin-right: "0.75rem";
+}
+
+.mx-14 {
+  margin-left: "0.875rem";
+  margin-right: "0.875rem";
+}
+
+.mx-16 {
+  margin-left: "1rem";
+  margin-right: "1rem";
+}
+
+.mx-18 {
+  margin-left: "1.125rem";
+  margin-right: "1.125rem";
+}
+
+.mx-20 {
+  margin-left: "1.25rem";
+  margin-right: "1.25rem";
+}
+
+.mx-22 {
+  margin-left: "1.375rem";
+  margin-right: "1.375rem";
+}
+
+.mx-24 {
+  margin-left: "1.5rem";
+  margin-right: "1.5rem";
+}
+
+.mx-30 {
+  margin-left: "1.875rem";
+  margin-right: "1.875rem";
+}
+
+.mx-32 {
+  margin-left: "2rem";
+  margin-right: "2rem";
+}
+
+.mx-36 {
+  margin-left: "2.25rem";
+  margin-right: "2.25rem";
+}
+
+.mx-40 {
+  margin-left: "2.5rem";
+  margin-right: "2.5rem";
+}
+
+.mx-48 {
+  margin-left: "3rem";
+  margin-right: "3rem";
+}
+
+.my-4 {
+  margin-top: "0.25rem";
+  margin-bottom: "0.25rem";
+}
+
+.my-8 {
+  margin-top: "0.5rem";
+  margin-bottom: "0.5rem";
+}
+
+.my-12 {
+  margin-top: "0.75rem";
+  margin-bottom: "0.75rem";
+}
+
+.my-14 {
+  margin-top: "0.875rem";
+  margin-bottom: "0.875rem";
+}
+
+.my-16 {
+  margin-top: "1rem";
+  margin-bottom: "1rem";
+}
+
+.my-18 {
+  margin-top: "1.125rem";
+  margin-bottom: "1.125rem";
+}
+
+.my-20 {
+  margin-top: "1.25rem";
+  margin-bottom: "1.25rem";
+}
+
+.my-22 {
+  margin-top: "1.375rem";
+  margin-bottom: "1.375rem";
+}
+
+.my-24 {
+  margin-top: "1.5rem";
+  margin-bottom: "1.5rem";
+}
+
+.my-30 {
+  margin-top: "1.875rem";
+  margin-bottom: "1.875rem";
+}
+
+.my-32 {
+  margin-top: "2rem";
+  margin-bottom: "2rem";
+}
+
+.my-36 {
+  margin-top: "2.25rem";
+  margin-bottom: "2.25rem";
+}
+
+.my-40 {
+  margin-top: "2.5rem";
+  margin-bottom: "2.5rem";
+}
+
+.my-48 {
+  margin-top: "3rem";
+  margin-bottom: "3rem";
+}
+
+.customButton {
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  line-height: 1.125rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.customButton:hover {
+  opacity: 0.6;
+}
+.customButton p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 0px;
+}
+.customButton--primary {
+  background-color: #3e63dd;
+  border: 1px solid #3e63dd;
+  color: #ffffff;
+}
+.customButton--primaryDark {
+  border: 1px solid #1c2024;
+  color: #ffffff;
+  background: #1c2024;
+}
+.customButton--secondary {
+  border: 1px solid rgba(0, 7, 19, 0.6235294118);
+  background-color: #f2f2f5;
+}
+.customButton--fullWidth {
+  width: 100%;
+}
+
+.formField {
+  margin-bottom: 1.875rem;
+  position: relative;
+}
+.formField label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+.formField .required::after {
+  content: "*";
+  padding-left: 0.125rem;
+  color: red;
+}
+.formField input {
+  background-color: #fff;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem;
+  padding: 0.5rem;
+  min-height: 40px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 48, 0.106);
+}
+.formField input::-moz-placeholder {
+  color: rgba(0, 4, 29, 0.455);
+}
+.formField input::placeholder {
+  color: rgba(0, 4, 29, 0.455);
+}
+.formField input:focus {
+  border: none;
+  outline: none;
+}
+.formField input:disabled {
+  opacity: 0.5;
+}
+.formField input[type=checkbox] {
+  width: auto;
+  min-height: auto;
+  width: 20px;
+  height: 20px;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 48, 0.106);
+  cursor: pointer;
+}
+.formField select {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem;
+  padding: 0.5rem;
+  min-height: 40px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 48, 0.106);
+}
+.formField select::-moz-placeholder {
+  color: rgba(0, 4, 29, 0.455);
+}
+.formField select::placeholder {
+  color: rgba(0, 4, 29, 0.455);
+}
+.formField select option:disabled {
+  opacity: 0.5;
+}
+.formField select * {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem;
+  padding: 1.5rem;
+}
+.formField .hexValueInput {
+  width: 50%;
+  max-width: 64px;
+  padding-left: 1.75rem;
+  font-weight: 600;
+}
+.formField .hexPreText {
+  position: absolute;
+  height: 100%;
+  max-height: 40px;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem;
+  padding-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+.formField .hexPreText::before {
+  content: "0x";
+  z-index: 10;
+}
+.formField .hexPreText--disabled {
+  opacity: 0.5;
+}
+.formField .fileUploadContainer {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 48, 0.106);
+  box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.012);
+  box-shadow: 0px 12px 32px -16px rgba(0, 0, 59, 0.051);
+  border-radius: 1rem;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.formField .fileUploadContainer--highlighted {
+  border: 1px solid rgba(9, 9, 245, 0.651);
+}
+.formField .fileUploadContainer .fileUploadArea {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.formField .fileUploadContainer .fileUploadArea input[type=file] {
+  display: none;
+}
+.formField .fileUploadContainer .fileUploadArea .checkIcon,
+.formField .fileUploadContainer .fileUploadArea .uploadIcon {
+  margin-right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(240, 244, 255);
+  border-radius: 4rem;
+}
+.formField .fileUploadContainer .fileUploadArea .checkIcon {
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.formField .fileUploadContainer .fileUploadArea .checkIcon svg {
+  z-index: 10;
+  animation: delayedShowUp 1.5s linear;
+}
+.formField .fileUploadContainer .fileUploadArea .checkIcon .loaderBorder {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(240, 244, 255) 75%, transparent 80% 100%), conic-gradient(green calc(var(--progress-value) * 1%), rgb(240, 244, 255) 0%);
+  animation: progress 2s 1 forwards;
+}
+.formField .fileUploadContainer .fileUploadArea .fileInfoText {
+  display: flex;
+  flex-direction: column;
+}
+.formField .fileUploadContainer .fileUploadArea .fileInfoText .headingText {
+  margin-bottom: 0.25rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.formField .fileUploadContainer .fileUploadArea .fileInfoText .descriptionText {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(126, 128, 138);
+}
+.formField .fileUploadContainer #removeButton {
+  display: none;
+}
+.formField--large {
+  width: 100%;
+}
+.formField--medium {
+  width: 48%;
+}
+.formField--small {
+  width: 23%;
+}
+.formField--checkbox-field {
+  display: flex;
+  align-items: center;
+}
+.formField--checkbox-field label {
+  margin: 0;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.formActionButtons {
+  margin-top: 2rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.formActionButtons .customButton {
+  width: 49%;
+}
+
+.page {
+  display: none;
+  width: 80%;
+  max-width: 900px;
+  height: 90%;
+  background-color: #f2f2f5;
+  border-radius: 1.5rem;
+  box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.0117647059);
+  box-shadow: 0px 12px 32px -16px rgba(0, 0, 59, 0.0509803922);
+  border: 1px solid #ebebef;
+  padding: 2rem 2.875rem;
+  flex-direction: column;
+}
+
+.listProgramsPage .headerSection {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.25rem;
+}
+.listProgramsPage .headerSection .pageHeading {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0px;
+}
+.listProgramsPage .headerSection .pageCTAConatiner {
+  display: flex;
+  align-items: center;
+}
+.listProgramsPage .headerSection .pageCTAConatiner button:last-child {
+  margin-left: 1.25rem;
+}
+.listProgramsPage .searchSection {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+.listProgramsPage .searchSection .inputContainer {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.625rem;
+  border: 1px solid rgba(0, 0, 48, 0.106);
+  margin-right: 1rem;
+}
+.listProgramsPage .searchSection .inputContainer input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem;
+  margin-left: 0.5rem;
+}
+.listProgramsPage .searchSection .inputContainer input::-moz-placeholder {
+  color: rgba(0, 4, 29, 0.455);
+}
+.listProgramsPage .searchSection .inputContainer input::placeholder {
+  color: rgba(0, 4, 29, 0.455);
+}
+.listProgramsPage .searchSection .inputContainer input:focus {
+  border: none;
+  outline: none;
+}
+.listProgramsPage .searchSection #searchButton {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+.listProgramsPage .contentSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.listProgramsPage .contentSection .noProgramsBanner {
+  width: 60%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.listProgramsPage .contentSection .noProgramsBanner h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0px;
+  margin-bottom: 1rem;
+}
+.listProgramsPage .contentSection .noProgramsBanner p {
+  margin: 0px;
+  margin-bottom: 1rem;
+  color: rgb(126, 128, 138);
+}
+.listProgramsPage .contentSection .noProgramsBanner .filesIcon {
+  background: rgb(235, 235, 239);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+.listProgramsPage .contentSection .programsListContainer {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  display: none;
+  padding-right: 0.3rem;
+}
+.listProgramsPage .contentSection .programsListContainer::-webkit-scrollbar {
+  width: 0.3rem;
+}
+.listProgramsPage .contentSection .programsListContainer::-webkit-scrollbar-track {
+  background-color: rgba(169, 169, 169, 0.1);
+}
+.listProgramsPage .contentSection .programsListContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(169, 169, 169, 0.7);
+  border-radius: 0.25rem;
+}
+.listProgramsPage .contentSection .programsListContainer .programsList {
+  width: 100%;
+  border-collapse: collapse;
+  width: 100%;
+}
+.listProgramsPage .contentSection .programsListContainer .programsList tr {
+  border-bottom: 1px solid red;
+}
+.listProgramsPage .contentSection .programsListContainer .programsList th {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+  padding: 0.75rem;
+  position: sticky;
+  top: 0;
+  background-color: #f2f2f5;
+}
+.listProgramsPage .contentSection .programsListContainer .programsList tr {
+  border-bottom: 1px solid rgba(1, 1, 46, 0.134);
+}
+.listProgramsPage .contentSection .programsListContainer .programsList td {
+  border-bottom: 1px solid rgba(1, 1, 46, 0.134);
+  width: 100%;
+  padding: 0.75rem;
+  font-family: Inter;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.listProgramsPage .contentSection .programsListContainer .programsList td:nth-child(2) div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.listProgramsPage .contentSection .programsListContainer .programsList td .deviceName {
+  width: 100%;
+}
+.listProgramsPage .contentSection .programsListContainer .programsList td .actionButtons {
+  display: flex;
+  margin-left: 5rem;
+}
+.listProgramsPage .contentSection .programsListContainer .programsList td .actionButtons .customButton {
+  padding: 6px 12px;
+  border-radius: 0.25rem;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0px;
+  border: none;
+  text-align: left;
+}
+.listProgramsPage .contentSection .programsListContainer .programsList td .actionButtons .customButton:last-child {
+  margin-left: 0.5rem;
+}
+.listProgramsPage .contentSection .programsListContainer .programsList td .actionButtons .editButton {
+  background: rgba(1, 68, 255, 0.059);
+  color: rgb(16, 29, 70);
+}
+.listProgramsPage .contentSection .programsListContainer .programsList td .actionButtons .deleteButton {
+  background: rgba(255, 1, 1, 0.063);
+  color: rgb(100, 23, 35);
+}
+.listProgramsPage .footerSection {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.listProgramsPage .footerSection .memoryInfoContainer .memoryPercentage,
+.listProgramsPage .footerSection .memoryInfoContainer .usedMemory {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  font-weight: 400;
+  color: rgb(126, 128, 138);
+  margin: 0px;
+}
+.listProgramsPage .footerSection .memoryInfoContainer .memoryIndicator {
+  margin-top: 0.5rem;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+}
+.listProgramsPage .footerSection .memoryInfoContainer .memoryIndicator .memoryLevelContainer {
+  width: 100%;
+  height: 100%;
+  border-radius: 90px;
+  height: 12px;
+  border: 1px solid rgb(185, 187, 198);
+  margin-right: 0.25rem;
+}
+.listProgramsPage .footerSection .memoryInfoContainer .memoryIndicator .memoryLevelContainer .memoryLevel {
+  height: 100%;
+  border-radius: 90px;
+  background: rgba(187, 0, 7, 0.836);
+  width: 0%;
+}
+.listProgramsPage .footerSection .memoryInfoContainer .memoryIndicator .memoryLevelContainer .memoryLevel--warn {
+  background: rgba(187, 0, 7, 0.836);
+}
+.listProgramsPage .footerSection .memoryInfoContainer .memoryIndicator .memoryLevelContainer .memoryLevel--full {
+  background: rgba(187, 0, 7, 0.836);
+}
+.listProgramsPage .footerSection .memoryInfoContainer .memoryIndicator .memoryLevelContainer .memoryLevel--stable {
+  background: rgba(187, 0, 7, 0.836);
+}
+.listProgramsPage .footerSection .memoryInfoContainer .memoryIndicator .memoryPercentage {
+  margin: 0px;
+  color: rgb(28, 32, 36);
+}
+.listProgramsPage .footerSection .versionInfoContainer .versionInfo {
+  margin: 0px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(126, 128, 138);
+}
+
+.addEditProgramPage .headerSection {
+  width: 100%;
+  height: auto;
+  display: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.25rem;
+}
+.addEditProgramPage .headerSection .navLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+.addEditProgramPage .headerSection .navLink:active {
+  color: unset;
+}
+.addEditProgramPage .headerSection .navLink span {
+  margin-right: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+.addEditProgramPage .headerSection .pageHeading {
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0px;
+}
+.addEditProgramPage .headerSection .pageCTAConatiner {
+  display: flex;
+  align-items: center;
+}
+.addEditProgramPage .headerSection .pageCTAConatiner button:last-child {
+  margin-left: 1.25rem;
+}
+.addEditProgramPage .searchSection {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+.addEditProgramPage .searchSection .inputContainer {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.625rem;
+  border: 1px solid rgba(0, 0, 48, 0.106);
+  margin-right: 1rem;
+}
+.addEditProgramPage .searchSection .inputContainer input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem;
+  margin-left: 0.5rem;
+}
+.addEditProgramPage .searchSection .inputContainer input::-moz-placeholder {
+  color: rgba(0, 4, 29, 0.455);
+}
+.addEditProgramPage .searchSection .inputContainer input::placeholder {
+  color: rgba(0, 4, 29, 0.455);
+}
+.addEditProgramPage .searchSection .inputContainer input:focus {
+  border: none;
+  outline: none;
+}
+.addEditProgramPage .searchSection #searchButton {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+.addEditProgramPage .contentSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.addEditProgramPage .contentSection .notation {
+  display: none;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+.addEditProgramPage .contentSection .notation span {
+  font-weight: 600;
+}
+.addEditProgramPage .contentSection .programFormContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow-y: auto;
+  padding-bottom: 1rem;
+  padding-right: 0.3rem;
+}
+.addEditProgramPage .contentSection .programFormContainer::-webkit-scrollbar {
+  width: 0.3rem;
+}
+.addEditProgramPage .contentSection .programFormContainer::-webkit-scrollbar-track {
+  background-color: rgba(169, 169, 169, 0.1);
+}
+.addEditProgramPage .contentSection .programFormContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(169, 169, 169, 0.7);
+  border-radius: 0.25rem;
+}
+.addEditProgramPage .footerSection {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.addEditProgramPage .footerSection .memoryInfoContainer .memoryPercentage,
+.addEditProgramPage .footerSection .memoryInfoContainer .usedMemory {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  font-weight: 400;
+  color: rgb(126, 128, 138);
+  margin: 0px;
+}
+.addEditProgramPage .footerSection .memoryInfoContainer .memoryIndicator {
+  margin-top: 0.5rem;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+}
+.addEditProgramPage .footerSection .memoryInfoContainer .memoryIndicator .memoryLevelContainer {
+  width: 100%;
+  height: 100%;
+  border-radius: 90px;
+  height: 12px;
+  border: 1px solid rgb(185, 187, 198);
+  margin-right: 0.25rem;
+}
+.addEditProgramPage .footerSection .memoryInfoContainer .memoryIndicator .memoryLevelContainer .memoryLevel {
+  height: 100%;
+  border-radius: 90px;
+  background: rgba(187, 0, 7, 0.836);
+  width: 0%;
+}
+.addEditProgramPage .footerSection .memoryInfoContainer .memoryIndicator .memoryLevelContainer .memoryLevel--warn {
+  background: rgba(187, 0, 7, 0.836);
+}
+.addEditProgramPage .footerSection .memoryInfoContainer .memoryIndicator .memoryLevelContainer .memoryLevel--full {
+  background: rgba(187, 0, 7, 0.836);
+}
+.addEditProgramPage .footerSection .memoryInfoContainer .memoryIndicator .memoryLevelContainer .memoryLevel--stable {
+  background: rgba(187, 0, 7, 0.836);
+}
+.addEditProgramPage .footerSection .memoryInfoContainer .memoryIndicator .memoryPercentage {
+  margin: 0px;
+  color: rgb(28, 32, 36);
+}
+.addEditProgramPage .footerSection .versionInfoContainer .versionInfo {
+  margin: 0px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(126, 128, 138);
+}
+
+@property --progress-value {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+@keyframes progress {
+  to {
+    --progress-value: 100;
+  }
+}
+@keyframes delayedShowUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.settingsPage .headerSection {
+  width: 100%;
+  height: auto;
+  display: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.25rem;
+}
+.settingsPage .headerSection .navLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+.settingsPage .headerSection .navLink:active {
+  color: unset;
+}
+.settingsPage .headerSection .navLink span {
+  margin-right: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+.settingsPage .headerSection .pageHeading {
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0px;
+}
+.settingsPage .headerSection .pageCTAConatiner {
+  display: flex;
+  align-items: center;
+}
+.settingsPage .headerSection .pageCTAConatiner button:last-child {
+  margin-left: 1.25rem;
+}
+.settingsPage .contentSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  overflow-y: auto;
+  padding-right: 0.3rem;
+}
+.settingsPage .contentSection::-webkit-scrollbar {
+  width: 0.3rem;
+}
+.settingsPage .contentSection::-webkit-scrollbar-track {
+  background-color: rgba(169, 169, 169, 0.1);
+}
+.settingsPage .contentSection::-webkit-scrollbar-thumb {
+  background-color: rgba(169, 169, 169, 0.7);
+  border-radius: 0.25rem;
+}
+.settingsPage .contentSection .subSection {
+  padding-bottom: 3rem;
+}
+.settingsPage .contentSection .subSection .formField {
+  display: none;
+}
+.settingsPage .contentSection .subSection .sectionName {
+  width: 100%;
+  margin: 0px;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.875rem;
+}
+.settingsPage .contentSection .subSection .softwareUpdateBanner {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 48, 0.106);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.012);
+  box-shadow: 0px 12px 32px -16px rgba(0, 0, 59, 0.051);
+}
+.settingsPage .contentSection .subSection .softwareUpdateBanner .statusIcon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+.settingsPage .contentSection .subSection .softwareUpdateBanner #dangerIcon {
+  background: rgb(255, 239, 239);
+}
+.settingsPage .contentSection .subSection .softwareUpdateBanner .versionInfoContainer {
+  width: 100%;
+}
+.settingsPage .contentSection .subSection .softwareUpdateBanner .versionInfoContainer .versionStatusText {
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.settingsPage .contentSection .subSection .softwareUpdateBanner .versionInfoContainer .versionInfoText {
+  margin-top: 0.25rem;
+}
+.settingsPage .contentSection .subSection .softwareUpdateBanner .versionInfoContainer .versionInfoText span {
+  margin-left: 0.25rem;
+}
+.settingsPage .contentSection .subSection .softwareUpdateBanner .versionInfoContainer .versionInfoText span::after {
+  content: "|";
+  margin-left: 0.5rem;
+  color: black;
+}
+.settingsPage .contentSection .subSection .softwareUpdateBanner .versionInfoContainer .versionInfoText span:first-child {
+  margin: 0;
+}
+.settingsPage .contentSection .subSection .softwareUpdateBanner .versionInfoContainer .versionInfoText span:last-child::after {
+  content: "";
+  padding: 0px;
+}
+.settingsPage .contentSection .subSection .softwareUpdateBanner .versionInfoContainer .versionInfoText .currentVersionText {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(217, 61, 66);
+}
+.settingsPage .contentSection .subSection .softwareUpdateBanner .customButton {
+  margin-left: 1rem;
+}
+.settingsPage .contentSection #wifiConfigSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.settingsPage .contentSection #wifiConfigSection .networkModeRadioButtons {
+  margin-bottom: 2rem;
+  display: flex;
+}
+.settingsPage .contentSection #wifiConfigSection .networkModeRadioButtons .radioButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 3rem;
+}
+.settingsPage .contentSection #wifiConfigSection .networkModeRadioButtons .radioButtonContainer label {
+  width: auto;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.settingsPage .contentSection #wifiConfigSection .networkModeRadioButtons .radioButtonContainer input[type=radio] {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  accent-color: #3e63dd;
+}
+.settingsPage .contentSection #wifiConfigSection #wifiSSIDContainer .wifiSSIDSelectorContainer {
+  display: flex;
+  max-height: 40px;
+  align-items: center;
+}
+.settingsPage .contentSection #wifiConfigSection #wifiSSIDContainer .wifiSSIDSelectorContainer select {
+  max-width: 48%;
+}
+.settingsPage .contentSection #wifiConfigSection #wifiSSIDContainer .wifiSSIDSelectorContainer #scanButton {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.settingsPage .contentSection #wifiConfigSection #wifiSSIDContainer .wifiSSIDSelectorContainer #scanLoader {
+  display: none;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  overflow: hidden;
+}
+.settingsPage .contentSection #wifiConfigSection #wifiSSIDContainer .wifiSSIDSelectorContainer #scanLoader .loader,
+.settingsPage .contentSection #wifiConfigSection #wifiSSIDContainer .wifiSSIDSelectorContainer #scanLoader .loader:after {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+.settingsPage .contentSection #wifiConfigSection #wifiSSIDContainer .wifiSSIDSelectorContainer #scanLoader .loader {
+  font-size: 10px;
+  position: relative;
+  border-top: 0.25rem solid rgba(62, 99, 221, 0.2);
+  border-right: 0.25rem solid rgba(62, 99, 221, 0.2);
+  border-bottom: 0.25rem solid rgba(62, 99, 221, 0.2);
+  border-left: 0.25rem solid rgb(62, 99, 221);
+  transform: translateZ(0);
+  animation: load8 1.1s infinite linear;
+}
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.settingsPage .footerSection {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.settingsPage .footerSection .memoryInfoContainer .memoryPercentage,
+.settingsPage .footerSection .memoryInfoContainer .usedMemory {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  font-weight: 400;
+  color: rgb(126, 128, 138);
+  margin: 0px;
+}
+.settingsPage .footerSection .memoryInfoContainer .memoryIndicator {
+  margin-top: 0.5rem;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+}
+.settingsPage .footerSection .memoryInfoContainer .memoryIndicator .memoryLevelContainer {
+  width: 100%;
+  height: 100%;
+  border-radius: 90px;
+  height: 12px;
+  border: 1px solid rgb(185, 187, 198);
+  margin-right: 0.25rem;
+}
+.settingsPage .footerSection .memoryInfoContainer .memoryIndicator .memoryLevelContainer .memoryLevel {
+  height: 100%;
+  border-radius: 90px;
+  background: rgba(187, 0, 7, 0.836);
+  width: 0%;
+}
+.settingsPage .footerSection .memoryInfoContainer .memoryIndicator .memoryLevelContainer .memoryLevel--warn {
+  background: rgba(187, 0, 7, 0.836);
+}
+.settingsPage .footerSection .memoryInfoContainer .memoryIndicator .memoryLevelContainer .memoryLevel--full {
+  background: rgba(187, 0, 7, 0.836);
+}
+.settingsPage .footerSection .memoryInfoContainer .memoryIndicator .memoryLevelContainer .memoryLevel--stable {
+  background: rgba(187, 0, 7, 0.836);
+}
+.settingsPage .footerSection .memoryInfoContainer .memoryIndicator .memoryPercentage {
+  margin: 0px;
+  color: rgb(28, 32, 36);
+}
+.settingsPage .footerSection .versionInfoContainer .versionInfo {
+  margin: 0px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(126, 128, 138);
+}
+
+@property --progress-value {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+@keyframes progress {
+  to {
+    --progress-value: 100;
+  }
+}
+@keyframes delayedShowUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=styles.css.map */
